@@ -31,3 +31,12 @@ https://qiita.com/stupid_student2/items/f25c2b8c3d0ca5cdc89e
 
 これつかう
 https://qiita.com/_akira19/items/8911567227ce38a1bdf6
+
+monaco-editorに切り替えてみる　vscodeがすきなので。
+https://github.com/react-monaco-editor/react-monaco-editor
+
+画面サイズの微妙なずれがあったりなかったり？？？
+https://qiita.com/takihiyoshi/items/eb173a034af6bcb1bf9d
+
+画面サイズ取得helper
+https://ryotarch.com/javascript/react/get-window-size-with-react-hooks/
