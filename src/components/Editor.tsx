@@ -1,8 +1,6 @@
 import React from 'react'
-import AceEditor from "react-ace"
-
-import "ace-builds/src-noconflict/mode-javascript";
-import "ace-builds/src-noconflict/theme-github";
+import MonacoEditor from 'react-monaco-editor';
+import useWindowDimensions from '../helpers/useWindowDimensions';
 
 type Props = {
   text: string;
@@ -10,24 +8,19 @@ type Props = {
 }
 
 const Editor: React.FC<Props> = ({text, setText}) => {
+  const { width, height } = useWindowDimensions();
+  const options = {
+    selectOnLineNumbers: true
+  };
   return (
-    <AceEditor
-      placeholder="Placeholder Text"
-      mode="javascript"
-      theme="github"
-      fontSize={14}
-      showPrintMargin={true}
-      showGutter={true}
-      highlightActiveLine={true}
+    <MonacoEditor
+      width={width}
+      height={height}
+      language="javascript"
+      theme="vs-dark"
+      options={options}
       value={text}
-      onChange={(e) => {setText(e);}}
-      setOptions={{
-        enableBasicAutocompletion: false,
-        enableLiveAutocompletion: false,
-        enableSnippets: false,
-        showLineNumbers: true,
-        tabSize: 2,
-      }}
+      onChange={(e)=>{setText(e)}}
     />
   )
 }

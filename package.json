@@ -17,28 +17,24 @@
     }
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.16",
-    "@types/node": "^14.14.10",
-    "electron": "^11.0.3",
     "electron-reload": "^1.5.0",
     "minimist": "^1.2.5",
-    "react-scripts": "4.0.1",
+    "monaco-editor-webpack-plugin": "^2.0.0",
+    "react-monaco-editor": "^0.40.0",
     "reset-css": "^5.0.1",
-    "typescript": "^4.1.2",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "electron-is-dev": "^1.2.0",
+    "electron-store": "^6.0.1"
   },
   "homepage": "./",
   "main": "build/electron/main.js",
   "scripts": {
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
     "postinstall": "electron-builder install-app-deps",
     "wait-start": "wait-on http://localhost:3000",
     "start": "concurrently \"npm run start:start-server\" \"npm run start:watch-electron\" \"npm run start:use-electron\"",
-    "start:start-server": "cross-env BROWSER=none react-scripts start",
+    "start:start-server": "cross-env BROWSER=none react-app-rewired start",
     "start:watch-electron": "run-s wait-start start:watch-electron:watch",
     "start:watch-electron:watch": "tsc -p electron -w",
     "start:use-electron": "run-s wait-start start:use-electron:build start:use-electron:run",
@@ -46,9 +42,9 @@
     "start:use-electron:run": "electron . test.txt",
     "build": "run-s build:clean build:react build:electron build:electron-builder",
     "build:clean": "rimraf build dist",
-    "build:react": "react-scripts build",
+    "build:react": "react-app-rewired build",
     "build:electron": "tsc -p electron",
-    "build:electron-builder": "electron-builder"
+    "build:electron-builder": "electron-builder --win --x64"
   },
   "eslintConfig": {
     "extends": [
@@ -69,14 +65,21 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.16",
+    "@types/node": "^14.14.10",
     "@types/minimist": "^1.2.1",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.3",
+    "electron": "^11.0.3",
     "electron-builder": "^22.9.1",
-    "electron-is-dev": "^1.2.0",
-    "electron-store": "^6.0.1",
+    "react-app-rewired": "^2.1.7",
+    "react-scripts": "4.0.1",
+    "typescript": "^4.1.2",
     "npm-run-all": "^4.1.5",
     "react": "^17.0.1",
     "react-ace": "^9.2.0",
