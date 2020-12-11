@@ -40,3 +40,16 @@ https://qiita.com/takihiyoshi/items/eb173a034af6bcb1bf9d
 
 画面サイズ取得helper
 https://ryotarch.com/javascript/react/get-window-size-with-react-hooks/
+
+縦の謎余白はこれ
+overflow: hidden;で解決するっぽいー
+https://qiita.com/khsk/items/81982d89d92f88f28e41
+
+styled-compoents使います
+https://qiita.com/bonjour_ken/items/85c7ff5f345c69ad48f1
+
+typescriptで使うときのTips
+https://qiita.com/taneba/items/3bff0c5a1b0ebed36b5b
+
+vscode で見やすくする！
+https://qiita.com/bonjour_ken/items/85c7ff5f345c69ad48f1
