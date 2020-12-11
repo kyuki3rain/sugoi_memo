@@ -27,6 +27,15 @@ function createWindow() {
     },
   });
 
+  const store = new Store();
+  if(args._.length === 1){
+    store.set("file_name", args._[0]);
+    const text = readFile(args._[0]);
+    store.set("text", text);
+  }
+  
+  initIpcMain(store);
+
   if (isDev) {
     win.loadURL("http://localhost:3000/index.html");
   } else {
@@ -62,14 +71,6 @@ function createWindow() {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   createWindow();
-  const store = new Store();
-  if(args._.length === 1){
-    store.set("file_name", args._[0]);
-    const text = readFile(args._[0]);
-    store.set("text", text);
-  }
-  
-  initIpcMain(store);
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
