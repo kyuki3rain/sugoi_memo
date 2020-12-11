@@ -3,6 +3,7 @@ import 'reset-css';
 import EditorPage from "./pages/EditorPage";
 import { ActionType, myReducer, StateType } from "./reducer";
 import styled from "styled-components";
+import { useInterval } from 'use-interval';
 
 const { myAPI } = window;
 
@@ -25,11 +26,17 @@ function Main() {
   const [state, dispatch] = useReducer(myReducer, initialState);
 
   const loadText = async () => {
-    dispatch({
-      type: "setText",
-      text: await myAPI.loadText()
-    });
+    const text = await myAPI.loadText();
+    dispatch({ type: "setText", text });
   }
+
+  const saveText = (text: string) => {
+    myAPI.save(text);
+  }
+
+  useInterval(() => {
+    saveText(state.text);
+  }, 5000);
 
   useEffect(()=>{
     loadText();
@@ -43,7 +50,5 @@ function Main() {
     </Content.Provider>
   );
 }
-
-
 
 export default Main;

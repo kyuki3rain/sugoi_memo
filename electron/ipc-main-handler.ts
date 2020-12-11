@@ -6,7 +6,7 @@ export const initIpcMain = (store: Store<Record<string, unknown>>) => {
   ipcMain.handle("load-text", () => {return store.get("text")});
   ipcMain.handle("read-dir", async () => fs.promises.readdir("./"));
   ipcMain.handle("save", (event, str: string) => {
+    store.delete('text');
     store.set("text", str);
-    console.log(`save: ${str}`);
   });
 };

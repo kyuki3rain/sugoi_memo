@@ -56,3 +56,12 @@ https://qiita.com/bonjour_ken/items/85c7ff5f345c69ad48f1
 
 各OSでのbuild時のアイコンとかいろいろ
 https://h3poteto.hatenablog.com/entry/2018/04/14/234353
+
+useIntervalが便利
+https://qiita.com/_neko/items/76fa87ea1763165aee55
+
+electron-store
+https://qiita.com/mr_t_free/items/4633a1a9434e120c42d8
+
+.d.tsを自動で作ってくれるらしい！
+https://qiita.com/ConquestArrow/items/450f961c3d54bc932cf3
