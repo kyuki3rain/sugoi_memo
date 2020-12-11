@@ -1,6 +1,6 @@
 {
   "name": "melectmon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "author": "Sankaku",
   "description": "Example of cra with electron",
@@ -46,7 +46,7 @@
     "build:clean": "rimraf build dist",
     "build:react": "react-app-rewired build",
     "build:electron": "tsc -p electron",
-    "build:electron-builder:win": "electron-builder --win --x64",
+    "build:electron-builder": "electron-builder --win --x64",
     "build:electron-builder:linux": "electron-builder --linux"
   },
   "eslintConfig": {
