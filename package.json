@@ -39,7 +39,7 @@
     "start:watch-electron:watch": "tsc -p electron -w",
     "start:use-electron": "run-s wait-start start:use-electron:build start:use-electron:run",
     "start:use-electron:build": "tsc -p electron",
-    "start:use-electron:run": "electron . test.txt",
+    "start:use-electron:run": "electron .",
     "build": "run-s build:clean build:react build:electron build:electron-builder",
     "build:clean": "rimraf build dist",
     "build:react": "react-app-rewired build",
