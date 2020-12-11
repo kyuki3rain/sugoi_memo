@@ -16,8 +16,8 @@ const Editor: React.FC<Props> = ({text, setText}) => {
     <MonacoEditor
       width={width}
       height={height}
-      language="javascript"
-      theme="vs-dark"
+      language="html"
+      theme="vs"
       options={options}
       value={text}
       onChange={(e)=>{setText(e)}}
