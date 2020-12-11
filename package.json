@@ -45,7 +45,8 @@
     "build:clean": "rimraf build dist",
     "build:react": "react-app-rewired build",
     "build:electron": "tsc -p electron",
-    "build:electron-builder": "electron-builder --win --x64"
+    "build:electron-builder:win": "electron-builder --win --x64",
+    "build:electron-builder:linux": "electron-builder --linux"
   },
   "eslintConfig": {
     "extends": [

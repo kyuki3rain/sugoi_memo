@@ -53,3 +53,6 @@ https://qiita.com/taneba/items/3bff0c5a1b0ebed36b5b
 
 vscode で見やすくする！
 https://qiita.com/bonjour_ken/items/85c7ff5f345c69ad48f1
+
+各OSでのbuild時のアイコンとかいろいろ
+https://h3poteto.hatenablog.com/entry/2018/04/14/234353
