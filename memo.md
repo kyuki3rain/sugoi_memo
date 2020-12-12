@@ -65,3 +65,6 @@ https://qiita.com/mr_t_free/items/4633a1a9434e120c42d8
 
 .d.tsを自動で作ってくれるらしい！
 https://qiita.com/ConquestArrow/items/450f961c3d54bc932cf3
+
+electronのdialog
+https://qiita.com/unhurried/items/b622726851d22e36dccb

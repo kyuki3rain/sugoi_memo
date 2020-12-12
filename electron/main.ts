@@ -34,7 +34,7 @@ function createWindow() {
     store.set("text", text);
   }
   
-  initIpcMain(store);
+  initIpcMain(store, win);
 
   if (isDev) {
     win.loadURL("http://localhost:3000/index.html");

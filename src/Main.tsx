@@ -31,7 +31,7 @@ function Main() {
   }
 
   const saveText = (text: string) => {
-    myAPI.save(text);
+    myAPI.saveText(text);
   }
 
   useInterval(() => {

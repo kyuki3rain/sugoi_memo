@@ -6,5 +6,5 @@ declare global {
 
 export interface Sandbox {
   loadText: () => string;
-  save: (text: string) => void;
+  saveText: (text: string) => void;
 }
