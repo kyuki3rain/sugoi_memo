@@ -17,7 +17,6 @@ const args = minimist(argv.slice(1));
 function createWindow() {
   // Create the browser window. 
   const win = new BrowserWindow({
-    frame: false,
     width: 800,
     height: 600,
     useContentSize: true,
@@ -28,7 +27,7 @@ function createWindow() {
     },
   });
 
-  win.setMenu(null);
+  // win.setMenu(null);
 
   const store = new Store();
   if(args._.length === 1){
@@ -37,7 +36,7 @@ function createWindow() {
     store.set("text", text);
   }
   
-  initIpcMain(store);
+  initIpcMain(store, win);
 
   if (isDev) {
     win.loadURL("http://localhost:3000/index.html");

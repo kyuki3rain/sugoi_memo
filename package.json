@@ -1,6 +1,6 @@
 {
   "name": "melectmon",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "author": "Sankaku",
   "description": "Example of cra with electron",

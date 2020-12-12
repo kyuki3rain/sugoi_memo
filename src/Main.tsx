@@ -4,7 +4,7 @@ import EditorPage from "./pages/EditorPage";
 import { ActionType, myReducer, StateType } from "./reducer";
 import styled from "styled-components";
 import { useInterval } from 'use-interval';
-import { loadText, saveText } from "./helpers/myAPI";
+import { backup, load } from "./helpers/myAPI";
 
 const App = styled.div`
     height: 100%;
@@ -13,7 +13,7 @@ const App = styled.div`
     overflow: hidden;
 `
 
-const initialState = { text: '' };
+const initialState = { text: '', filename: '' };
 type ContextType = {
   state: StateType;
   dispatch: React.Dispatch<ActionType>;
@@ -25,14 +25,13 @@ function Main() {
   const [state, dispatch] = useReducer(myReducer, initialState);
 
 
-
   useInterval(() => {
-    saveText(state.text);
+    backup(state.filename, state.text);
   }, 5000);
 
   useEffect(()=>{
-    loadText(dispatch);
-  }, []);
+    load(state.filename, dispatch);
+  }, [state.filename]);
 
   return (
     <Content.Provider value={{ state, dispatch }}>
