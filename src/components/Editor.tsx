@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHotkeys } from 'react-hotkeys-hook';
 import MonacoEditor from 'react-monaco-editor';
 import useWindowDimensions from '../helpers/useWindowDimensions';
 
@@ -12,6 +13,10 @@ const Editor: React.FC<Props> = ({text, setText}) => {
   const options = {
     selectOnLineNumbers: true
   };
+  useHotkeys("ctrl+enter", () => {
+    const cmd = text.split(/\n/).slice(-1)[0];
+    console.log(cmd);
+  });
   return (
     <MonacoEditor
       width={width}

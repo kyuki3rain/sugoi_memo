@@ -65,3 +65,10 @@ https://qiita.com/mr_t_free/items/4633a1a9434e120c42d8
 
 .d.tsを自動で作ってくれるらしい！
 https://qiita.com/ConquestArrow/items/450f961c3d54bc932cf3
+
+react-hotkeysがいいかも
+https://qiita.com/SotaSuzuki/items/1e060f0db0c61ec4f9d5
+https://github.com/greena13/react-hotkeys#the-latest-pre-release
+
+やっぱりreact-hotkeys-hook
+https://johannesklauss.github.io/react-hotkeys-hook/readme
