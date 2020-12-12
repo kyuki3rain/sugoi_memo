@@ -63,6 +63,8 @@ https://qiita.com/_neko/items/76fa87ea1763165aee55
 electron-store
 https://qiita.com/mr_t_free/items/4633a1a9434e120c42d8
 
+
+(
 .d.tsを自動で作ってくれるらしい！
 https://qiita.com/ConquestArrow/items/450f961c3d54bc932cf3
 
@@ -72,3 +74,10 @@ https://github.com/greena13/react-hotkeys#the-latest-pre-release
 
 やっぱりreact-hotkeys-hook
 https://johannesklauss.github.io/react-hotkeys-hook/readme
+)
+
+command追加
+https://qiita.com/erukiti/items/1720711dd46a9df3d332
+
+これ
+https://stackoverflow.com/questions/38674092/microsoft-monaco-editor-in-browser-get-value-of-line

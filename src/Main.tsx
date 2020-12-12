@@ -4,8 +4,7 @@ import EditorPage from "./pages/EditorPage";
 import { ActionType, myReducer, StateType } from "./reducer";
 import styled from "styled-components";
 import { useInterval } from 'use-interval';
-
-const { myAPI } = window;
+import { loadText, saveText } from "./helpers/myAPI";
 
 const App = styled.div`
     height: 100%;
@@ -25,21 +24,14 @@ export const Content = createContext({} as ContextType);
 function Main() {
   const [state, dispatch] = useReducer(myReducer, initialState);
 
-  const loadText = async () => {
-    const text = await myAPI.loadText();
-    dispatch({ type: "setText", text });
-  }
 
-  const saveText = (text: string) => {
-    myAPI.save(text);
-  }
 
   useInterval(() => {
     saveText(state.text);
   }, 5000);
 
   useEffect(()=>{
-    loadText();
+    loadText(dispatch);
   }, []);
 
   return (
