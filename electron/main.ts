@@ -17,6 +17,7 @@ const args = minimist(argv.slice(1));
 function createWindow() {
   // Create the browser window. 
   const win = new BrowserWindow({
+    frame: false,
     width: 800,
     height: 600,
     useContentSize: true,
@@ -26,6 +27,8 @@ function createWindow() {
       preload: path.join(__dirname, "preload.js"),
     },
   });
+
+  win.setMenu(null);
 
   const store = new Store();
   if(args._.length === 1){
