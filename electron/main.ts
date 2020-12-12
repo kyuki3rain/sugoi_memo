@@ -27,6 +27,8 @@ function createWindow() {
     },
   });
 
+  // win.setMenu(null);
+
   const store = new Store();
   if(args._.length === 1){
     store.set("file_name", args._[0]);
@@ -34,7 +36,7 @@ function createWindow() {
     store.set("text", text);
   }
   
-  initIpcMain(store);
+  initIpcMain(store, win);
 
   if (isDev) {
     win.loadURL("http://localhost:3000/index.html");

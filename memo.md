@@ -81,3 +81,11 @@ https://qiita.com/erukiti/items/1720711dd46a9df3d332
 
 これ
 https://stackoverflow.com/questions/38674092/microsoft-monaco-editor-in-browser-get-value-of-line
+
+electron の表示回り
+https://qiita.com/potato4d/items/7cf11b75176cb355f364
+electronのdialog
+https://qiita.com/unhurried/items/b622726851d22e36dccb
+
+起動早くする
+https://teratail.com/questions/221064

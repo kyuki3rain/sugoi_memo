@@ -5,6 +5,10 @@ declare global {
 }
 
 export interface Sandbox {
-  loadText: () => string;
-  save: (text: string) => void;
+  loadText: (filename: string) => string;
+  backup: (filename: string, text: string) => void;
+  open: () => string;
+  load: (filename: string) => string;
+  new: (filename: string) => string;
+  save: (filename: string, text: string) => string;
 }
