@@ -89,3 +89,5 @@ https://qiita.com/unhurried/items/b622726851d22e36dccb
 
 起動早くする
 https://teratail.com/questions/221064
+めも
+https://www.electron.build/multi-platform-build#docker
