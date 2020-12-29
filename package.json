@@ -1,6 +1,6 @@
 {
   "name": "melectmon",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
   "author": "Sankaku",
   "description": "Example of cra with electron",
@@ -13,7 +13,13 @@
       "buildResources": "assets"
     },
     "win": {
-      "target": "portable"
+      "target": {
+        "target": "zip",
+        "arch": [
+          "x64",
+          "ia32"
+        ]
+      }
     }
   },
   "dependencies": {
@@ -42,7 +48,8 @@
     "start:use-electron": "run-s wait-start start:use-electron:build start:use-electron:run",
     "start:use-electron:build": "tsc -p electron",
     "start:use-electron:run": "electron .",
-    "build": "run-s build:clean build:react build:electron build:electron-builder",
+    "buildr": "run-s build:clean build:react",
+    "builde": "run-s build:electron build:electron-builder",
     "build:clean": "rimraf build dist",
     "build:react": "react-app-rewired build",
     "build:electron": "tsc -p electron",

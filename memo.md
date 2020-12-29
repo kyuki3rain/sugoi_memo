@@ -82,7 +82,7 @@ https://qiita.com/erukiti/items/1720711dd46a9df3d332
 これ
 https://stackoverflow.com/questions/38674092/microsoft-monaco-editor-in-browser-get-value-of-line
 
-electron の表示回り
+electron の表示回り frame: false,
 https://qiita.com/potato4d/items/7cf11b75176cb355f364
 electronのdialog
 https://qiita.com/unhurried/items/b622726851d22e36dccb
@@ -91,3 +91,15 @@ https://qiita.com/unhurried/items/b622726851d22e36dccb
 https://teratail.com/questions/221064
 めも
 https://www.electron.build/multi-platform-build#docker
+
+enumにつかえる
+https://engineering.linecorp.com/ja/blog/typescript-enum-tree-shaking/
+
+electronのwin版をbuild->だめそう
+https://nakanowai.dev/blog/build-electron-applications-easily-using-docker/
+
+gitbashからこのコマンドでビルドする。
+./node_modules/.bin/electron-builder --win --x64
+
+これ大事
+https://www.electronjs.org/docs/api/frameless-window

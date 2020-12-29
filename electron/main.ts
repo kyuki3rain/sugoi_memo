@@ -2,7 +2,6 @@ import { app, BrowserWindow } from "electron";
 import * as path from "path";
 import * as isDev from "electron-is-dev";
 import { initIpcMain } from "./ipc-main-handler";
-import * as Store from "electron-store";
 import * as fs from "fs";
 import minimist = require('minimist');
 
@@ -27,16 +26,13 @@ function createWindow() {
     },
   });
 
-  // win.setMenu(null);
+  win.setMenu(null);
 
-  const store = new Store();
   if(args._.length === 1){
-    store.set("file_name", args._[0]);
-    const text = readFile(args._[0]);
-    store.set("text", text);
+    // const text = readFile(args._[0]);
   }
   
-  initIpcMain(store, win);
+  initIpcMain(win);
 
   if (isDev) {
     win.loadURL("http://localhost:3000/index.html");
@@ -94,12 +90,3 @@ app.on("activate", () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-function readFile(path: string ) {
-  fs.readFile(path, (error, data) => {
-      if (error != null) {
-          return "";
-      }
-      return data.toString()
-  })
-}

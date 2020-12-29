@@ -1,42 +1,46 @@
-import { ActionType } from "../reducer";
-
 const { myAPI } = window;
 
-export const loadText = async (filename: string, dispatch: React.Dispatch<ActionType>) => {
-  if(myAPI && filename){
-    const text = await myAPI.loadText(filename);
-    dispatch({ type: "setText", text });
-  }
-}
-
 export const backup = (filename: string, text: string) => {
-  if(myAPI && filename && text){
+  if(myAPI && filename){
     myAPI.backup(filename, text);
   }
 }
 
-export const open = async (dispatch: React.Dispatch<ActionType>) => {
+export const load = async (filename: string, setText: (text: string) => void) => {
+  if(myAPI && filename){
+    const text = await myAPI.load(filename);
+    setText(text);
+  }
+}
+
+export const list = async (text: string, setText: (text: string) => void) => {
   if(myAPI){
-    const filename = await myAPI.open();
+    const list = await myAPI.list();
+    setText(text + list.join("\n"));
+  }
+}
+
+export const open = async (setFileName: (filename: string) => void, setText: (text: string) => void, filename: string | null) => {
+  if(myAPI){
+    if(!filename){
+      filename = await myAPI.openFile();
+    }
     if(filename){
-      dispatch({ type: "setFileName", filename });
+      await myAPI.open(filename);
+      const text = await myAPI.load(filename);
+      setFileName(filename);
+      setText(text);
     }
   }
 }
-export const load = async (filename: string, dispatch: React.Dispatch<ActionType>) => {
-  if(myAPI && filename){
-    const text = await myAPI.loadText(filename);
-    dispatch({ type: "setText", text });
-  }
-}
-export const newFile = (filename: string, dispatch: React.Dispatch<ActionType>) => {
-  if(myAPI){
-    myAPI.new(filename);
-    dispatch({ type: "setFileName", filename });
-  }
-}
+
 export const save = (filename: string, text: string) => {
-  if(myAPI){
-    myAPI.save(filename, text);
+  if(myAPI && filename){
+    myAPI.backup(filename, text);
+    myAPI.save(filename);
   }
+}
+
+export const exit = () => {
+  if(myAPI) myAPI.exit();
 }

@@ -1,10 +1,10 @@
 import React, { useEffect, useReducer, createContext } from "react";
 import 'reset-css';
 import EditorPage from "./pages/EditorPage";
-import { ActionType, myReducer, StateType } from "./reducer";
+import { ActionType, initialState, myReducer, StateType } from "./reducer";
 import styled from "styled-components";
 import { useInterval } from 'use-interval';
-import { backup, load } from "./helpers/myAPI";
+import { backup } from "./helpers/myAPI";
 
 const App = styled.div`
     height: 100%;
@@ -13,7 +13,6 @@ const App = styled.div`
     overflow: hidden;
 `
 
-const initialState = { text: '', filename: '' };
 type ContextType = {
   state: StateType;
   dispatch: React.Dispatch<ActionType>;
@@ -24,14 +23,14 @@ export const Content = createContext({} as ContextType);
 function Main() {
   const [state, dispatch] = useReducer(myReducer, initialState);
 
+  useEffect(() => {
+    document.title = state.filename
+  }, [state.filename])
+
 
   useInterval(() => {
     backup(state.filename, state.text);
-  }, 5000);
-
-  useEffect(()=>{
-    load(state.filename, dispatch);
-  }, [state.filename]);
+  }, 60 * 1000);
 
   return (
     <Content.Provider value={{ state, dispatch }}>
