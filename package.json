@@ -11,15 +11,6 @@
     ],
     "directories": {
       "buildResources": "assets"
-    },
-    "win": {
-      "target": {
-        "target": "zip",
-        "arch": [
-          "x64",
-          "ia32"
-        ]
-      }
     }
   },
   "dependencies": {
@@ -48,13 +39,15 @@
     "start:use-electron": "run-s wait-start start:use-electron:build start:use-electron:run",
     "start:use-electron:build": "tsc -p electron",
     "start:use-electron:run": "electron .",
-    "buildr": "run-s build:clean build:react",
-    "builde": "run-s build:electron build:electron-builder",
-    "build:clean": "rimraf build dist",
-    "build:react": "react-app-rewired build",
-    "build:electron": "tsc -p electron",
-    "build:electron-builder": "electron-builder --win --x64",
-    "build:electron-builder:linux": "electron-builder --linux"
+    "build": "run-s build:li build:wi",
+    "build:li": "run-s build:li:clean build:li:react build:li:electron",
+    "build:li:clean": "rimraf build",
+    "build:li:react": "react-app-rewired build",
+    "build:li:electron": "tsc -p electron",
+    "build:wi": "run-s build:wi:clean build:wi:electron-builder",
+    "build:wi:clean": "rimraf dist",
+    "build:wi:electron-builder": "electron-builder --win --x64",
+    "build:li:electron-builder": "electron-builder --linux"
   },
   "eslintConfig": {
     "extends": [
