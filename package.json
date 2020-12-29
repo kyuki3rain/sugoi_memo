@@ -1,6 +1,6 @@
 {
   "name": "melectmon",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "author": "Sankaku",
   "description": "Example of cra with electron",
@@ -11,6 +11,15 @@
     ],
     "directories": {
       "buildResources": "assets"
+    },
+    "win": {
+      "target": {
+        "target": "zip",
+        "arch": [
+          "x64",
+          "ia32"
+        ]
+      }
     }
   },
   "dependencies": {
