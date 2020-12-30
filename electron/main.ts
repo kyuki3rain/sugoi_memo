@@ -2,7 +2,6 @@ import { app, BrowserWindow } from "electron";
 import * as path from "path";
 import * as isDev from "electron-is-dev";
 import { initIpcMain } from "./ipc-main-handler";
-import * as fs from "fs";
 import minimist = require('minimist');
 
 let argv = process.argv;
